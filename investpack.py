@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
+import streamlit as st
 import tqdm
 import warnings
 warnings.filterwarnings("ignore")
@@ -13,6 +14,7 @@ warnings.filterwarnings("ignore")
 def ticker_to_yahoo_format(t):
     return '.'.join(t.split(':')[::-1])[:-1]
 
+@st.cache()
 def get_daily_data_with_today(ticker, today, start_date=None, n_days=None, enforce_today=True, adj_div=True):
     if ticker[0] == 'H':
         ticker = ticker_to_yahoo_format(ticker)
