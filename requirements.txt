@@ -1,3 +1,4 @@
 openbb==2.1.0
 streamlit==1.16.0
 tinkoff==0.1.1
+tinkoff-investments==0.2.0b45
