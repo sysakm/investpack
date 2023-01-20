@@ -35,8 +35,33 @@ HKG:0288
 HKG:0291
 HKG:3888"""
 
+tcs_tickers = """GAZP
+SIBN
+YNDX
+TCSG
+VKCO
+SBER
+LKOH
+MTLR
+ALRS
+NLMK
+GMKN
+NVTK
+SGZH
+MAGN
+MGNT
+PIKK
+DSKY
+AGRO
+MTSS
+CHMF
+ROSN
+RUAL
+TATN"""
+
 st.image(
     [investpack.draw_rsi(hk_tickers, (12, 8)),
-     investpack.draw_rsi(hk8_tickers, (12, 5))],
-    caption=['Main HKG stocks', 'BX8 HKG stocks']
+     investpack.draw_rsi(hk8_tickers, (12, 5)),
+     investpack.draw_rsi(tcs_tickers, (12, 8), 'tcs')],
+    caption=['Main HKG stocks', 'BX8 HKG stocks', 'Main MOEX stocks']
 )
