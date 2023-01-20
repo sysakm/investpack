@@ -26,4 +26,4 @@ HKG:9626
 HKG:0700
 HKG:1113"""
 b = investpack.draw_rsi(tickers)
-st.image(image, caption='Main HKG stocks')
+st.image(b, caption='Main HKG stocks')
