@@ -35,7 +35,6 @@ HKG:0288
 HKG:0291
 HKG:3888"""
 
-b = investpack.draw_rsi(tickers)
 st.image(
     [investpack.draw_rsi(hk_tickers), investpack.draw_rsi(hk8_tickers)],
     caption=['Main HKG stocks', 'BX8 HKG stocks']
