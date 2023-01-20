@@ -32,7 +32,7 @@ warnings.filterwarnings("ignore")
 def ticker_to_yahoo_format(t):
     return '.'.join(t.split(':')[::-1])[:-1]
 
-@st.cache(ttl=24*3600)
+# @st.cache(ttl=24*3600)
 def get_daily_data_with_today(ticker, today, start_date=None, n_days=None, enforce_today=True, adj_div=True):
     if ticker[0] == 'H':
         ticker = ticker_to_yahoo_format(ticker)
@@ -124,7 +124,7 @@ def load_div_data(ticker, from_):
     df = df[['yield_value', 'last_buy_date']].groupby('last_buy_date')['yield_value'].sum()
     return df.to_dict()
     
-@st.cache(ttl=24*3600)
+# @st.cache(ttl=24*3600)
 def load_tcs_data(ticker, from_, adj_div=True, enforce_today=False, remove_incomplete=True):
     with Client(TOKEN) as client:
         r = client.instruments.find_instrument(query=ticker)
