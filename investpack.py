@@ -73,7 +73,7 @@ def RSI(data, n=14):
     D = SMMA(np.maximum(data['Close'].shift(1) - data['Close'], 0).dropna(), n)
     return 100 * U / (U + D + 1e-25)
 
-def draw_rsi(ticker_list):
+def draw_rsi(ticker_list, figsize=(10, 7)):
     rsi_data = {}
     for ticker in ((ticker_list).split('\n')):
         data = get_daily_data_with_today(ticker, datetime.datetime.combine(datetime.date.today(), datetime.time()), enforce_today=True)
@@ -82,7 +82,7 @@ def draw_rsi(ticker_list):
     rsi_data.index = [str(x)[-5:].replace('-', '/') for x in rsi_data.index.date]
     rsi_data.columns = [x[4:] for x in rsi_data.columns]
 
-    plt.figure(figsize=(10, 7))
+    plt.figure(figsize=figsize)
     ax = sns.heatmap(rsi_data.T.iloc[:, -14:].sort_values(rsi_data.index[-1], ascending=False), annot=True, cbar=False)
     ax.tick_params(left=True, labelleft=True, right=True, labelright=True, rotation=0)
     plt.title('RSI')
