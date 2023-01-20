@@ -36,7 +36,7 @@ HKG:0291
 HKG:3888"""
 
 st.image(
-    [investpack.draw_rsi(hk_tickers, (15, 12)),
-     investpack.draw_rsi(hk8_tickers, (15, 6))],
+    [investpack.draw_rsi(hk_tickers, (12, 8)),
+     investpack.draw_rsi(hk8_tickers, (12, 5))],
     caption=['Main HKG stocks', 'BX8 HKG stocks']
 )

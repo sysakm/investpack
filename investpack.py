@@ -87,7 +87,7 @@ def draw_rsi(ticker_list, figsize=(10, 7)):
     ax.tick_params(left=True, labelleft=True, right=True, labelright=True, rotation=0)
     plt.title('RSI')
     buf = io.BytesIO()
-    plt.savefig(buf, format='png')
+    plt.savefig(buf, format='pdf')
     buf.seek(0)
     plt.close()
     return buf
