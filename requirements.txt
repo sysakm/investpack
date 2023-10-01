@@ -1,4 +1,5 @@
-openbb==2.2.0
-streamlit==1.16.0
+finam-export
 tinkoff==0.1.1
-tinkoff-investments==0.2.0b45
+tinkoff-api==1.19
+tinkoff-investments==0.2.0b59
+yfinance==0.2.29
